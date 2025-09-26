@@ -1,0 +1,50 @@
+
+ <app-navbar></app-navbar>
+<div class="service-page">
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <div class="overlay"></div>
+    <div class="hero-content">
+       <h1># {{ serviceType | titlecase }} Services</h1> 
+      <p>
+        Discover the latest trends in {{ serviceType }} at <strong>StyleHub</strong>.
+        Our expert stylists bring creativity, precision, and care to give you a look
+        that matches your personality and boosts your confidence.
+      </p>
+    </div>
+  </section>
+
+  <!-- Service Section -->
+  <section class="service-image-container">
+    <!-- <h2 class="section-title">Our {{ serviceType | titlecase }} Collection</h2> -->
+    <p class="section-subtitle">
+      Choose from a wide range of styles, each crafted to suit your vibe.
+      Select the one you love and book instantly.
+    </p>
+
+    <div class="image-grid">
+      <div class="image-card" *ngFor="let img of serviceImages">
+        <img [src]="img.imageUrl" [alt]="img.styleName" />
+        <div class="image-info">
+          <h3>{{ img.styleName }}</h3>
+          <p class="desc">{{ img.description }}</p>
+          <p class="price">₹ {{ img.price }}</p>
+
+          <button class="btn-book" (click)="addToCart(img)" [disabled]="isInCart(img)">
+            {{ isInCart(img) ? 'Already Selected' : 'Add To Cart' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ✅ Fixed Book Appointment Button -->
+<button 
+  class="btn-fixed-book" 
+  (click)="bookAppointment()" 
+  [disabled]="cartService.getCart().length === 0">
+  Book Appointment
+</button>
+
+<app-footer></app-footer>

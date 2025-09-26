@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Manage Appointments</title>
+    <link rel="stylesheet" href="manage-appointment.component.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-actions">
+                <button class="btn primary">➕ New Appointment</button>
+                <button class="btn outline">Export</button>
+            </div>
+        </header>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-card">
+                <h4>Today</h4>
+                <p>{{todayAppointmentCount}}</p>
+            </div>
+            <div class="stat-card">
+                <h4>This Week</h4>
+                <p>{{weekAppointmentCount}}</p>
+            </div>
+
+             <div class="stat-card">
+                <h4>This Month</h4>
+                <p>{{monthAppointmentCount}}</p>
+            </div>
+
+            <div class="stat-card">
+                <h4>This Year</h4>
+                <p>{{yearAppointmentCount}}</p>
+            </div>
+
+        </div>
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="search-filter">
+                <div class="search">
+                    🔍 <input [(ngModel)]="searchValueByEmailOrUsername" placeholder="Search by name or email">
+                    <button (click)="searchAppointment()" class="btn danger">Search</button>
+                </div>
+                <div class="filters">
+                    <select>
+                        <option>Status</option>
+                        <option>Confirmed</option>
+                        <option>Pending</option>
+                        <option>Cancelled</option>
+                        <option>Completed</option>
+                    </select>
+                    <select>
+                        <option>Service</option>
+                        <option>Haircut & Styling</option>
+                        <option>Hairspa & Treatment</option>
+                        <option>Beared Grooming</option>
+                        <option>Haircoloring</option>
+                        <option>Bridal & Groom Package</option>
+                    </select>
+                </div>
+            </div>
+            <button (click)="ngOnInit()" class="btn outline">Refresh</button>
+        </div>
+
+        <!-- Table -->
+        <section class="card table-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Services</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let appointment of appointments">
+                        <td>{{appointment.id}}</td>
+                        <td>{{ appointment.customerName }}</td>
+                        <td>{{ appointment.email }}</td>
+                        <td>{{ appointment.date }}</td>
+                        <td>{{ formatTime(appointment.time) }}</td>
+                        <td>
+                            <ul>
+                                <li *ngFor="let service of appointment.services">
+                                    {{ service.serviceName }} (₹{{ service.price }})
+                                </li>
+                            </ul>
+                        </td>
+                        <td><span class="status-pill {{ appointment.appointmentStatus | lowercase }}">{{ appointment.appointmentStatus }}</span></td>
+                        <td>
+                            <select [ngModel]="appointment.appointmentStatus" (ngModelChange)="updateStatus(appointment.id, $event)">
+                                <option value="PENDING">PENDING</option>
+                                <option value="CONFIRMED">CONFIRMED</option>
+                                <option value="CANCELLED">CANCELLED</option>
+                                <option value="COMPLETED">COMPLETED</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+
+</html>

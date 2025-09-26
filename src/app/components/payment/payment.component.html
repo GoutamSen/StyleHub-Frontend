@@ -1,0 +1,36 @@
+<div class="payment-page">
+  <div class="payment-card">
+    
+    <!-- Header -->
+    <h2 class="payment-header">💳 Make Payment</h2>
+
+    <!-- Total Amount -->
+    <div class="payment-total">
+      <p>Total Amount: <span class="amount">₹ {{ totalAmount }}</span></p>
+    </div>
+
+    <!-- Input -->
+    <label for="amount" class="payment-label">Enter Payment Amount:</label>
+    <input 
+      type="number" 
+      [(ngModel)]="amountToPay" 
+      placeholder="Enter amount"
+      class="payment-input"
+    />
+
+    <!-- Button -->
+    <button (click)="pay()" class="payment-btn">
+      Proceed to Pay
+    </button>
+
+    <!-- Info Section -->
+    <div class="payment-info">
+      <p>⚠️ <b>Payment Rules:</b></p>
+      <ul>
+        <li>You must pay at least <b>30%</b> within <b>2 hours</b>.</li>
+        <li>Pay <b>100%</b> within <b>2 hours</b> → Get <b class="highlight">10% discount</b>.</li>
+        <li>If no payment is made in time, your appointment will be <b class="danger">CANCELLED</b>.</li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="otp-card">
+  <div class="brand">
+    <span class="icon">💈</span>
+    <span class="title">StyleHub</span>
+  </div>
+
+  <h1 class="heading">Enter Verification Code</h1>
+  <p class="subtitle">We sent a 6-digit code to your registered email. Enter it below to continue.</p>
+
+  <div class="otp-inputs">
+    <input #otpInput *ngFor="let val of otpValues; let i = index" type="text" maxlength="1" [value]="otpValues[i]"
+      (input)="onInput($event, i)" (keydown)="onKeyDown($event, i)" (paste)="handlePaste($event)" />
+
+  </div>
+
+  <button class="btn" (click)="verifyOtp()">Verify</button>
+
+  <div class="helper">
+    <button class="resend" [disabled]="resendDisabled" (click)="resendOtp()">Resend OTP</button>
+    <span class="timer">00:{{ timer < 10 ? '0' + timer : timer }}</span>
+  </div>
+
+  <p class="message">{{ message }}</p>
+</div>

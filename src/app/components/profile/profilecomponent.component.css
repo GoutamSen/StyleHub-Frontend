@@ -1,0 +1,139 @@
+.profile-card {
+    max-width: 800px;
+    padding: 1.5rem;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-img-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-img {
+    width: 184px;
+    height: 223px;
+    border-radius: 20%;
+    object-fit: cover;
+    border: 1px solid #242222;
+    transition: 0.3s;
+    padding: 2%;
+    margin-top: 1%;
+}
+
+
+.profile-img:hover {
+    opacity: 0.8;
+}
+
+.upload-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white;
+    color: white;
+    border-radius: 227%;
+    padding: -202.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+}
+
+.upload-overlay:hover {
+    background: #898f8a;
+}
+
+.profile-basic {
+    margin-top: 1rem;
+}
+
+.profile-name {
+    font-size: 1.6rem;
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.profile-role {
+    font-size: 1rem;
+    color: #777;
+}
+
+.profile-details {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.profile-details h3 {
+    margin-bottom: 0.8rem;
+    color: #2a2b2a;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.profile-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-details li {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.profile-details span {
+    font-weight: 600;
+    color: #333;
+}
+
+.profile-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    flex: 1;
+    margin: 0 0.5rem;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn.edit {
+    background: #2196F3;
+    color: white;
+}
+
+.btn.edit:hover {
+    background: #1976D2;
+}
+
+.btn.settings {
+    background: #FF9800;
+    color: white;
+}
+
+.btn.settings:hover {
+    background: #E68900;
+}

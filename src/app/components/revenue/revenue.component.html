@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Revenue Dashboard</title>
+</head>
+
+<body>
+  <div class="shell">
+    <!-- Header -->
+    <header class="header">
+      <div class="controls">
+        <button class="btn">⬇ Export Report</button>
+      </div>
+    </header>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat">
+        <h3>Today</h3>
+        <p>₹ {{todayRevenue}}</p>
+      </div>
+      <div class="stat">
+        <h3>This Week</h3>
+        <p>₹ {{weekRevenue}}</p>
+      </div>
+      <div class="stat">
+        <h3>This Month</h3>
+        <p>₹ {{monthRevenue}}</p>
+      </div>
+      <div class="stat">
+        <h3>This Year</h3>
+        <p>₹ {{yearRevenue}}</p>
+      </div>
+    </div>
+
+    <!-- Revenue Table -->
+    <section class="card">
+      <h2 style="margin-bottom:15px; font-size:1.2rem; color:#333;">Revenue Records</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>UserName</th>
+            <th>Date</th>
+            <th>Service</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let appointment of appointments">
+            <td>{{appointment.user.username}}</td>
+            <td>{{appointment.date}}</td>
+            <td>
+                            <ul>
+                                <li *ngFor="let serviceImage of appointment.serviceImages">
+                                    {{ serviceImage.styleName }} (₹{{ serviceImage.price }})
+                                </li>
+                            </ul>
+                        </td>
+            <td>{{appointment.totalAmount}}</td>
+            <td><span class="pill success">{{appointment.appointmentStatus}}</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+
+</html>

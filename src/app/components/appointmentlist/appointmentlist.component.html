@@ -1,0 +1,46 @@
+<div class="appointments-container">
+  <h2>📅 My Appointments</h2>
+
+  <table class="appointment-table" *ngIf="appointments.length > 0; else noData">
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Services</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let appt of appointments">
+        <td>{{ appt.user.username }}</td>
+        <td>{{ appt.user.email }}</td>
+        <td>{{ appt.user.phoneNumber }}</td>
+        <td>{{ appt.date }}</td>
+        <td>{{ appt.time }}</td>
+        <td>
+          <ul *ngIf="appt.serviceImages && appt.serviceImages.length > 0;">
+            <li *ngFor="let serviceImage of appt.serviceImages">
+              {{ serviceImage.styleName}} - ₹{{ serviceImage.price }}
+            </li>
+          </ul>
+        </td>
+        <td>
+          <span [ngClass]="{
+            'status-pending': appt.appointmentStatus === 'PENDING',
+            'status-confirmed': appt.appointmentStatus === 'CONFIRMED',
+            'status-cancelled': appt.appointmentStatus === 'CANCELLED'
+          }">
+            {{ appt.appointmentStatus }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noData>
+    <p>No appointments found.</p>
+  </ng-template>
+</div>

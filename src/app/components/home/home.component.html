@@ -1,0 +1,197 @@
+<!-- Navbar section -->
+<app-navbar></app-navbar>
+
+<!-- Hero Section with Video Background -->
+<section id="home" class="hero-section">
+  <video video autoplay muted loop playsinline class="bg-video">
+    <source src="assets/2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Hero Content -->
+  <div class="hero-content text-center">
+    <h1 class="display-3 fw-bold text-white text-transparent">Welcome to StyleHub</h1>
+    <p class="lead text-light text-transparent">Your ultimate destination for grooming, style & confidence.</p>
+    <div class="d-flex justify-content-center gap-3 mt-4">
+      <a href="#services" class="btn btn-outline-light btn-lg">Explore Services</a>
+      <a  [routerLink]="['/serviceimage', 'haircut']" class="btn btn-book btn-lg">Book Now</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Featured Services -->
+<section class="services py-5" id="services">
+  <div class="container text-center">
+    <h2 class="mb-4 fw-bold">✨ Our Featured Services ✨</h2>
+    <p class="text-muted mb-5">Discover the best grooming experiences tailored just for you</p>
+    <div class="row g-4">
+
+      <!-- Service 1 -->
+      <div class="col-md-3">
+        <div class="card service-card shadow h-100">
+          <div class="card-body">
+            <h1>✂️</h1>
+            <h3 class="card-title mt-3">Haircut & Styling</h3>
+            <p class="card-text">Trendy cuts for every occasion</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="col-md-3">
+        <div class="card service-card shadow h-100">
+          <div class="card-body">
+            <h1>💆</h1>
+            <h3 class="card-title mt-3">Hair Spa & Treatment</h3>
+            <p class="card-text">Relax and refresh your scalp</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="col-md-3">
+        <div class="card service-card shadow h-100">
+          <div class="card-body">
+            <h1>🧔</h1>
+            <h3 class="card-title mt-3">Beard Trim & Styling</h3>
+            <p class="card-text">Sharp looks for modern gentlemen</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="col-md-3">
+        <div class="card service-card shadow h-100">
+          <div class="card-body">
+            <h1>💇‍♀️</h1>
+            <h3 class="card-title mt-3">Bridal & Groom Package</h3>
+            <p class="card-text">Special styling for your big day</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!--  Photo -1 Section -->
+<section class="hero">
+  <!-- Left: Image -->
+  <div class="hero-image">
+    <img src="assets/1.jpg" alt="Haircut photo">
+  </div>
+
+  <!-- Right: Text -->
+  <div class="hero-text">
+    <h1>Stay Stylish &</h1>
+    <h1> Stay Relaxed</h1>
+    <p>
+      Our expert barbers ensure you get the perfect haircut while you sit back and enjoy your time.
+      At <strong>StyleHub</strong>, we bring the perfect blend of style and comfort.
+    </p>
+    <a  [routerLink]="['/serviceimage', 'haircut']" class="btn">Book Your Appointment</a>
+  </div>
+</section>
+
+
+<section class="video-section">
+  <!-- Right: Content -->
+  <div class="video-content">
+    <h3>✂️ Premium Haircut Experience</h3>
+    <p>
+      At <strong>StyleHub</strong>, every haircut is more than just a trim — it’s a transformation.
+      Our expert barbers focus on precision, style, and comfort, giving you the confidence
+      to look your best every day.
+    </p>
+    <ul>
+      <li>✔️ Trendy cuts tailored to your personality</li>
+      <li>✔️ Professional styling with premium products</li>
+      <li>✔️ Relaxing grooming environment</li>
+    </ul>
+    <a  [routerLink]="['/serviceimage', 'haircut']" class="btn-groom">Book Haircut</a>
+  </div>
+  <!-- Left: Video -->
+  <div class="video-box">
+    <video autoplay muted loop playsinline>
+      <source src="assets/3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+<section class="facial-section">
+  <!-- Left: Image -->
+  <div class="facial-image">
+    <img src="assets/facial.jpeg" alt="Men's Facial Treatment at StyleHub">
+  </div>
+
+  <!-- Right: Content -->
+  <div class="facial-content">
+    <h2>💆 Premium Men's Facial</h2>
+    <p>
+      At <strong>StyleHub</strong>, we believe grooming goes beyond haircuts.
+      Our <em>Men’s Facial Treatments</em> are designed to refresh, hydrate, and
+      rejuvenate your skin, leaving you with a healthy glow and boosted confidence.
+    </p>
+
+    <h3>✨ Why Choose Our Facial Services?</h3>
+    <ul>
+      <li>✔️ Deep cleansing to remove impurities & excess oil</li>
+      <li>✔️ Hydration therapy for smoother, healthier skin</li>
+      <li>✔️ Relaxing massage to reduce stress & improve circulation</li>
+      <li>✔️ Customized treatments for your skin type</li>
+    </ul>
+
+    <p>
+      Whether you’re preparing for a special occasion or just looking to
+      unwind, our professional estheticians ensure you get the care your skin deserves.
+    </p>
+
+    <a  [routerLink]="['/serviceimage', 'facial']" class="btn-facial">Book Your Facial</a>
+  </div>
+</section>
+
+
+<section class="groom-section">
+  <!-- Right Content -->
+  <div class="groom-content">
+    <h2>🤵 Royal Groom Makeover</h2>
+    <p>
+      On your special day, every detail matters. At <strong>StyleHub</strong>, our
+      <em>Groom Makeover Service</em> ensures you look your absolute best with
+      flawless skin, perfectly styled beard, and a touch of elegance that
+      enhances your royal attire.
+    </p>
+
+    <h3>✨ Service Highlights</h3>
+    <ul>
+      <li>✔️ Professional facial cleansing & skin prep</li>
+      <li>✔️ Custom makeup for a natural yet striking look</li>
+      <li>✔️ Beard styling & grooming</li>
+      <li>✔️ Hairstyling to match your traditional or modern outfit</li>
+      <li>✔️ Exclusive royal touch for weddings & grand occasions</li>
+    </ul>
+
+    <p>
+      With our expert team, you won’t just look like a groom—you’ll look like
+      <strong>the king of the moment</strong>. Step into your wedding day with
+      unmatched confidence and style.
+    </p>
+    <a  [routerLink]="['/serviceimage', 'bridal']" class="btn-groom">Book Groom Package</a>
+  </div>
+
+  <!-- Left Image -->
+  <div class="groom-image">
+    <img src="assets/g.jpeg" alt="Groom Makeup and Grooming at StyleHub">
+  </div>
+</section>
+
+<!-- Main Content -->
+
+
+<!-- footer content -->
+<app-footer></app-footer>

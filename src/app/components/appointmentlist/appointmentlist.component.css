@@ -1,0 +1,133 @@
+/* Container */
+.appointments-container {
+  background: #f9f9fb;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 1600px;
+  margin: 30px auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Title */
+.appointments-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Table */
+.appointment-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.appointment-table thead {
+  background: #3f51b5;
+  color: white;
+}
+
+.appointment-table th,
+.appointment-table td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.appointment-table th {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.appointment-table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s ease;
+}
+
+.appointment-table tbody tr:hover {
+  background: #f1f5ff;
+}
+
+/* Service list */
+.appointment-table td ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.appointment-table td ul li {
+  list-style-type: disc;
+  font-size: 13px;
+  color: #333;
+}
+
+/* Appointment Status */
+.status-pending {
+  background: #fff3cd;
+  color: #856404;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.status-confirmed {
+  background: #d4edda;
+  color: #155724;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.status-cancelled {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* No data */
+.appointments-container p {
+  text-align: center;
+  padding: 20px;
+  font-size: 16px;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .appointment-table thead {
+    display: none;
+  }
+
+  .appointment-table tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: white;
+    padding: 10px;
+  }
+
+  .appointment-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .appointment-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #444;
+    margin-right: 10px;
+  }
+}

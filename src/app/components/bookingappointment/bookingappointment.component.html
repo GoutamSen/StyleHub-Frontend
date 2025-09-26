@@ -1,0 +1,36 @@
+<div class="booking-container">
+  <h2 class="title">📅 Book Your Appointment</h2>
+
+  <!-- Date -->
+  <div class="form-group">
+    <label for="date">Select Date</label>
+    <input type="date" id="date" [(ngModel)]="selectedDate" class="form-control" required>
+  </div>
+
+  <!-- Time -->
+  <div class="form-group">
+    <label for="time">Select Time</label>
+    <input type="time" id="time" [(ngModel)]="selectedTime" class="form-control" required>
+  </div>
+
+  <!-- Notes -->
+  <div class="form-group">
+    <label for="notes">Additional Notes</label>
+    <textarea id="notes" [(ngModel)]="notes" class="form-control" rows="3"></textarea>
+  </div>
+
+  <!-- Cart Preview -->
+  <div class="cart-preview" *ngIf="cartService.getCart().length > 0">
+    <h4>🛒 Selected Services</h4>
+    <ul>
+      <li *ngFor="let item of cartService.getCart()">
+        {{ item.styleName}}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Submit Button -->
+  <button class="btn btn-primary w-100" (click)="bookAppointment()" [disabled]="isLoading">
+    {{ isLoading ? 'Booking...' : 'Book Appointment' }}
+  </button>
+</div>

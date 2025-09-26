@@ -1,0 +1,123 @@
+/* General */
+.contact-page {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* Hero Section */
+.contact-hero {
+  background: url("https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg") center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.contact-hero .overlay {
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  padding: 30px;
+  border-radius: 12px;
+  color: #fff;
+  max-width: 700px;
+}
+
+.contact-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-hero span {
+  color: #ff6b6b;
+}
+
+.contact-hero p {
+  font-size: 1.2rem;
+}
+
+/* Contact Info Section */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 60px auto;
+  flex-wrap: wrap;
+  max-width: 1100px;
+}
+
+.info-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1 1 280px;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+}
+
+.info-card h3 {
+  color: #764ba2;
+  margin-bottom: 10px;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 60px 20px;
+  color: #fff;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+form button {
+  background: #ff6b6b;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #e74c3c;
+}
+
+/* Map Section */
+.map-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.map-section h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}

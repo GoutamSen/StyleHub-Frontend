@@ -1,0 +1,22 @@
+.service-section {
+  padding: 60px 20px;
+  margin-bottom: 40px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.service-section h2 {
+  margin-bottom: 15px;
+  color: #3f51b5;
+}
+
+.service-section button {
+  margin-top: 10px;
+  background: #ff4081;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}

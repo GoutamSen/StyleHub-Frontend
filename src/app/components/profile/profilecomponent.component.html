@@ -1,0 +1,33 @@
+<div class="profile-card">
+  <!-- Header -->
+  <div class="profile-header">
+    <div class="profile-img-container">
+      <img [src]="getImage()" alt="User" class="profile-img" />
+      <label class="upload-overlay">
+        📷
+        <input type="file" (change)="onFileSelected($event)" hidden />
+      </label>
+    </div>
+
+    <div class="profile-basic">
+      <h2 class="profile-name">{{ user?.username }}</h2>
+      <p class="profile-role">🌟 Premium Member</p>
+    </div>
+  </div>
+
+  <!-- Info Section -->
+  <div class="profile-details">
+    <h3>Contact Information</h3>
+    <ul>
+      <li><span>📧 Email :</span> {{ user?.email }}</li>
+      <li><span>📱 Phone :</span> +91 {{ user?.phoneNumber }}</li>
+      <li><span>📍 Address :</span> {{ user?.address }} Madhya Pradesh, India</li>
+    </ul>
+  </div>
+
+  <!-- Actions -->
+  <div class="profile-actions">
+    <button class="btn edit">✏️ Edit Profile</button>
+    <button class="btn settings">⚙️ Account Settings</button>
+  </div>
+</div>

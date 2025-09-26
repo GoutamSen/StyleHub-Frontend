@@ -1,0 +1,51 @@
+<!-- dashboard.component.html -->
+<div class="dashboard">
+
+  <!-- Filter Dropdown -->
+  <div class="toolbar">
+    <label for="filter" class="filter-label">Select Filter:</label>
+    <select id="filter" class="filter-select" [(ngModel)]="filter" (change)="onFilterChange(filter)">
+      <option value="day">Today</option>
+      <option value="week">This Week</option>
+      <option value="month">This Month</option>
+      <option value="year">This Year</option>
+    </select>
+  </div>
+
+  <!-- Stats Section -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-head">
+        <h3>👥 Users</h3>
+      </div>
+      <p class="stat-value">{{ userCount }}</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-head">
+        <h3>📅 Appointments <span class="muted">({{ filter | titlecase }})</span></h3>
+      </div>
+      <p class="stat-value">{{ appointmentsCount }}</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-head">
+        <h3>💰 Revenue <span class="muted">({{ filter | titlecase }})</span></h3>
+      </div>
+      <p class="stat-value">₹ {{ revenue }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="pie-card">
+  <h2 class="title">StyleHub Services Breakdown</h2>
+  <div style="display: block; width: 100%; max-width: 500px; margin: auto;">
+    <canvas
+      baseChart
+      [data]="pieChartData"
+      [options]="pieChartOptions"
+      [type]="'pie'">
+    </canvas>
+  </div>
+</div>
+

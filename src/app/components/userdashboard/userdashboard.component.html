@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleHub - User Dashboard</title>
+  <!-- Linking external CSS -->
+  <link rel="stylesheet" href="userdashboard.component.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>💈 StyleHub Dashboard</h1>
+    <div>
+      <a href="#">Home</a>
+      <a (click)="logout()">Logout</a>
+    </div>
+  </div>
+
+  <!-- Container -->
+  <div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Menu</h2>
+      <a routerLink="profile" routerLinkActive="active">👤 Profile</a>
+      <a routerLink="appointmentlist" routerLinkActive="active">📅 My Appointments</a>
+      <a [routerLink]="['/serviceimage', 'haircut']" routerLinkActive="active">➕ Book New</a>
+      <a routerLink="settings" routerLinkActive="active">⚙️ Settings</a>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+    <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</body>
+
+</html>

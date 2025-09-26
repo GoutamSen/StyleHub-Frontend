@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - StyleHub</title>
+  <!-- Link external CSS -->
+  <link rel="stylesheet" href="login.component.css">
+</head>
+
+<body>
+  <main class="login-page">
+    <div class="login-card">
+
+      <!-- Brand -->
+      <div class="brand">
+        <span class="logo">💈</span>
+        <span class="brand-name">StyleHub</span>
+      </div>
+
+      <!-- Title -->
+      <h2 class="title">Login</h2>
+
+      <!-- Login Form -->
+      <form (ngSubmit)="onLogin()">
+        <div>
+          <input type="email" [(ngModel)]="loginData.email" name="email" class="input-field" placeholder="User Email"
+            required />
+        </div>
+        <div>
+          <input type="password" [(ngModel)]="loginData.password" name="password" class="input-field"
+            placeholder="Password" required />
+        </div>
+        <button type="submit" class="btn-login">Login</button>
+      </form>
+      <br>
+      <div id="googleBtn"></div>
+
+
+      <!-- Forgot Password -->
+      <div class="forgot-password">
+        <a routerLink="/forgotpassword">Forgot Password?</a>
+      </div>
+
+       <div class="forgot-password">
+        <a routerLink="/signup">Signup?</a>
+      </div>
+
+      <!-- Messages -->
+      <div *ngIf="successMessage" class="message success">
+        {{ successMessage }}
+      </div>
+      <div *ngIf="errorMessage" class="message error">
+        {{ errorMessage }}
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

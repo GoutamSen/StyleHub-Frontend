@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleHub - Admin Dashboard</title>
+  <link rel="stylesheet" href="admindashboard.component.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>💼 StyleHub Admin</h1>
+    <div>
+      <a href="#">Dashboard</a>
+      <a (click)="logout()">Logout</a>
+    </div>
+  </div>
+
+  <!-- Container -->
+  <div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Admin Menu</h2>
+      <a routerLink="overview" routerLinkActive="active">📊 Overview</a>
+      <a routerLink="manageuser" routerLinkActive="active">👥 Manage Users</a>
+      <a routerLink="manageappointment" routerLinkActive="active">📅 Manage Appointments</a>
+      <a  routerLink="revenue" routerLinkActive="active">💰 Revenue</a>
+      <a >⚙️ Settings</a>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+     <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</body>
+</html>
