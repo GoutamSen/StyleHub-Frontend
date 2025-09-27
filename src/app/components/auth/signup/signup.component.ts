@@ -36,7 +36,7 @@ export class SignupComponent {
     if (this.signupForm.valid) {
       const userData = this.signupForm.value;
 
-      this.http.post<ApiResponse<void>>('http://localhost:8080/auth/signup', userData)
+      this.http.post<ApiResponse<void>>('https://stylehub-1-degl.onrender.com/auth/signup', userData)
         .subscribe({
           next: (response) => {
             console.log('Signup success:', response);

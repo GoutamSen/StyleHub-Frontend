@@ -75,7 +75,7 @@ export class AppointmentlistComponent {
     console.log("Loading appointments for email:", this.userEmail);
 
     this.http.get<ApiResponse<Appointment[]>>(
-      `http://localhost:8080/user/appointments?email=${this.userEmail}`,
+      `https://stylehub-1-degl.onrender.com/user/appointments?email=${this.userEmail}`,
       { headers }
     ).subscribe({
       next: (res) => {

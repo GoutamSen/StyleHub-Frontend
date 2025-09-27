@@ -17,7 +17,7 @@ export class ResetpasswordComponent {
   successMessage: string = '';
   errorMessage: string = '';
 
-  private baseUrl = 'http://localhost:8080/auth';  // ✅ matches backend
+  private baseUrl = 'https://stylehub-1-degl.onrender.com/auth';  // ✅ matches backend
 
   constructor(private http: HttpClient, private router: Router) {}
 

@@ -28,7 +28,7 @@ export class ServiceImageComponent {
 
   serviceType!: string;
   serviceImages: ServiceImage[] = [];
-  baseUrl = "http://localhost:8080/api/service/images";
+  baseUrl = "https://stylehub-1-degl.onrender.com/api/service/images";
 
   constructor(
     public cartService: CartService,

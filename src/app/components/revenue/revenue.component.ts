@@ -52,7 +52,7 @@ export class RevenueComponent {
 
   appointments: Appointment[] = [];
   user? : User;
-  private baseUrl = "http://localhost:8080/admin";
+  private baseUrl = "https://stylehub-1-degl.onrender.com/admin";
 
   constructor(private http: HttpClient) { }
 

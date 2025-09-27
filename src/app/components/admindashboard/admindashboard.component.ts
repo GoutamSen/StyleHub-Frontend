@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AdmindashboardComponent {
 
-  private baseUrl = "http://localhost:8080/auth";
+  private baseUrl = "https://stylehub-1-degl.onrender.com/auth";
   constructor(private router: Router, private http: HttpClient) { }
 
   logout() {

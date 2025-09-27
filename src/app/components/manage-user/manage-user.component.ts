@@ -40,7 +40,7 @@ export class ManageUserComponent {
   users: User[] = [];
   selectRole: string = "USER";
   selectedRole: string = "USER";
-  private baseUrl = "http://localhost:8080/admin";
+  private baseUrl = "https://stylehub-1-degl.onrender.com/admin";
 
   constructor(private http: HttpClient) { }
 

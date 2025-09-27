@@ -12,7 +12,7 @@ export class ForgotpasswordComponent {
   email: string = '';
   successMessage: string = '';
   errorMessage: string = '';
-  private baseUrl = 'http://localhost:8080/auth';  // ✅ fixed
+  private baseUrl = 'https://stylehub-1-degl.onrender.com/auth';  // ✅ fixed
 
   constructor(private router: Router, private http: HttpClient) {}
 

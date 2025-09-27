@@ -37,7 +37,7 @@ export class ManageAppointmentComponent {
   yearAppointmentCount = 0;
   errorMessage: string = '';
   searchValueByEmailOrUsername: string = '';
-  private baseUrl = 'http://localhost:8080/admin/appointments';
+  private baseUrl = 'https://stylehub-1-degl.onrender.com/admin/appointments';
 
   constructor(private http: HttpClient) { }
 

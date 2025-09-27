@@ -92,7 +92,7 @@ export class LoginComponent {
 
     // send token to backend for verification
     // send JWT to backend
-    this.http.post<ApiResponse<any>>('http://localhost:8080/auth/google', { token: response.credential })
+    this.http.post<ApiResponse<any>>('https://stylehub-1-degl.onrender.com/auth/google', { token: response.credential })
       .subscribe({
         next: (res) => {
           console.log('Google Login success', res);

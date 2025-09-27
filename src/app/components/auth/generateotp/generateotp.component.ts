@@ -136,7 +136,7 @@ export class GenerateotpComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.message = 'Verifying...';
 
-    this.http.post<any>('http://localhost:8080/auth/verify-otp', { otp })
+    this.http.post<any>('https://stylehub-1-degl.onrender.com/auth/verify-otp', { otp })
       .subscribe({
         next: (res) => {
           this.message = res.message || 'OTP verified successfully! Redirecting...';

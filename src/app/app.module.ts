@@ -25,7 +25,6 @@ import { ManageAppointmentComponent } from './components/manage-appointment/mana
 import { RevenueComponent } from './components/revenue/revenue.component';
 import { NgChartsModule } from 'ng2-charts';
 import { PaymentComponent } from './components/payment/payment.component';
-import { SharedModuleComponent } from './components/shared-module/shared-module.component';
 import { ServiceImageComponent } from './components/service-image/service-image.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
@@ -50,7 +49,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     RevenueComponent,
     PaymentComponent,
     FooterComponent,
-    SharedModuleComponent,
     ServiceImageComponent,
     NavbarComponent,
     FooterComponent

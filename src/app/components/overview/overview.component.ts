@@ -17,7 +17,7 @@ export class OverviewComponent {
   appointmentsCount: number = 0;
   revenue: number = 0;
 
-  private apiUrl = 'http://localhost:8080/admin'; // adjust if needed
+  private apiUrl = 'https://stylehub-1-degl.onrender.com/admin'; // adjust if needed
 
   constructor(private http: HttpClient) {}
 

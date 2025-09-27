@@ -27,7 +27,7 @@ export interface UploadImageRequest {
   styleUrls: ['./profilecomponent.component.css']
 })
 export class ProfilecomponentComponent {
-  private baseUrl = "http://localhost:8080/user";
+  private baseUrl = "https://stylehub-1-degl.onrender.com/user";
   user?: User;
   imagePreview: string | ArrayBuffer | null = null;
   selectedFile: File | null = null;
