@@ -15,7 +15,9 @@ export class AdmindashboardComponent {
   logout() {
     const token = localStorage.getItem("authToken");
     const email = localStorage.getItem("email");
-
+    console.log("start login method");
+    console.log("token ->"+token);
+    console.log("email ->"+email)
     this.http.post(
       `${this.baseUrl}/logout?email=${email}`,
       {}, // empty body
