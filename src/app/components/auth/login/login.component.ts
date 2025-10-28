@@ -29,7 +29,7 @@ export class LoginComponent {
   constructor(private router: Router, private http: HttpClient, private zone: NgZone) { }
 
   onLogin() {
-    this.http.post<ApiResponse<any>>('http://localhost:8080/auth/login', this.loginData).subscribe({
+    this.http.post<ApiResponse<any>>('https://stylehub-1-degl.onrender.com/auth/login', this.loginData).subscribe({
       next: (response) => {
         if (response.token) {
           // ✅ Save token in localStorage

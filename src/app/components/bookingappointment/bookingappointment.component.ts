@@ -34,6 +34,7 @@ export class BookingappointmentComponent {
   ) {}
 
   bookAppointment() {
+    console.log("start bookappointment method : ");
     if (!this.selectedDate || !this.selectedTime) {
       this.snackBar.open('⚠️ Please select date and time!', 'Close', { duration: 3000 });
       return;
@@ -48,6 +49,8 @@ export class BookingappointmentComponent {
     };
 
     this.isLoading = true;
+    console.log("appointment request : ",appointment);
+
     this.http.post("https://stylehub-1-degl.onrender.com/appointments/book", appointment).subscribe({
       next: (res: any) => {
         this.isLoading = false;
