@@ -57,14 +57,12 @@ export class BookingappointmentComponent {
         this.snackBar.open('✅ Appointment booked successfully!', 'Close', { duration: 3000 });
         this.cartService.clearCart();
         this.router.navigate(['/userdashboard']);
+      },
+      error: (err) => {
+        this.isLoading = false;
+        console.error("❌ Booking failed:", err);
+        this.snackBar.open('❌ Failed to book appointment. Try again.', 'Close', { duration: 3000 });
       }
-      
-      // ,
-      // error: (err) => {
-      //   this.isLoading = false;
-      //   console.error("❌ Booking failed:", err);
-      //   this.snackBar.open('❌ Failed to book appointment. Try again.', 'Close', { duration: 3000 });
-      // }
     });
   }
   
