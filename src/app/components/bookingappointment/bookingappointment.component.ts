@@ -53,6 +53,7 @@ export class BookingappointmentComponent {
 
     this.http.post("https://stylehub-1-degl.onrender.com/appointments/book", appointment).subscribe({
       next: (res: any) => {
+        console.log("response : ",res);
         this.isLoading = false;
         this.snackBar.open('✅ Appointment booked successfully!', 'Close', { duration: 3000 });
         this.cartService.clearCart();
