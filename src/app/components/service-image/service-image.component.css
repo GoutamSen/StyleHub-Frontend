@@ -128,7 +128,8 @@
 
 /* Fixed Book Appointment Button */
 .btn-fixed-book {
-  position: fixed;
+  position:static;
+  margin-left: 45%;
   bottom: 20px;
   right: 20px;
   z-index: 1000;
