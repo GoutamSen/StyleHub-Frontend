@@ -41,14 +41,12 @@ export class ServiceImageComponent {
     this.route.paramMap.subscribe(params => {
       this.serviceType = params.get('type') || '';
       console.log("Service Type:", this.serviceType);
-
       this.http
         .get<ApiResponse<ServiceImage[]>>(
           `${this.baseUrl}/all/service/name?serviceName=${this.serviceType}`
         )
         .subscribe({
           next: (res) => {
-            console.log("Fetched Data:", res.data);
             this.serviceImages = res.data;
           },
           error: () => {
@@ -59,8 +57,6 @@ export class ServiceImageComponent {
   }
 
   addToCart(img: ServiceImage) {
-    console.log("Adding to cart -> " + img.id);
-
     const token = localStorage.getItem("authToken");
     if (!token) {
       this.router.navigate(['login']);
