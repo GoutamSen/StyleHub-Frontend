@@ -39,8 +39,6 @@ export class LoginComponent {
           this.successMessage = response.message || 'Login successful';
           this.errorMessage = '';
 
-          console.log("Login response:", response);
-
           // ✅ Navigate based on role
           if (response.role === "ADMIN") {
             this.router.navigate(['/admindashboard']);
@@ -64,7 +62,6 @@ export class LoginComponent {
         } else {
           this.errorMessage = err.error?.message || "Login failed. Please try again.";
         }
-
         this.successMessage = '';
       }
     });

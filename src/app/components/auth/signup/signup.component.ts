@@ -39,7 +39,6 @@ export class SignupComponent {
       this.http.post<ApiResponse<void>>('https://stylehub-1-degl.onrender.com/auth/signup', userData)
         .subscribe({
           next: (response) => {
-            console.log('Signup success:', response);
             this.successMessage = response.message;
             this.signupForm.reset();
             
